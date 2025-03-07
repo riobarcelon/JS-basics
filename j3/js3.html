@@ -3,33 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JS Exercide 3</title>
 </head>
 <body>
-    <table>
     <h1>JS Exercise 3</h1>
-    <tr>
-        <td>
-         <label for="name">Enter a Number:</label>
-        </td>
-    </tr>
-    <td>
-    <input type="text" name="name1" id="num1">
-</td>
-<tr>
-    <td>
-    <button onclick="concatenate()">Insert</button>
-    <button onclick="clearEntries()">Delete All</button>
-</td>
-</tr>
-</table>
+    <table>
+        <tr>
+            <td>Enter a number:</td>
+            <td><input type="text" name="num", id="num"></td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="doStuff()">Insert</button>
+                <button onclick="deleteAll()">Delete All</button>
+            </td>
+        </tr>
+    </table>
+    <p>Numbers:</p>
+    <p id="arrayList"></p>
+    <p style="font-weight: bold;">Sum: <span style="color: blue;" id="sum"></span></p>
+    <p style="font-weight: bold;">Highest: <span style="color: green;" id="highest"></span></p>
+    <p style="font-weight: bold;">Lowest: <span style="color: red;" id="lowest"></span></p>
 
-<p style="font-weight: bold;">Numbers:</p>
-    <span id="num"></span><br>
-
-    <p style="font-weight: bold;" id="sum">Sum:</p>
-    <p style="font-weight: bold;" id="high">Highest:</p>
-    <p style="font-weight: bold;" id="low">Lowest:</p>
     <script src="main.js"></script>
 </body>
 </html>

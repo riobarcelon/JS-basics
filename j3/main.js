@@ -1,24 +1,47 @@
-const num1Txt = document.getElementById("num1");
-const numTxt = document.getElementById("num");
-const numTxt1 = document.getElementById("sum");
-const numTxt2 = document.getElementById("high");
-const numTxt3 = document.getElementById("low");
-let num = 0;
+const num = document.getElementById("num");
+const arrayList = document.getElementById("arrayList");
+const sumTxt = document.getElementById("sum")
+const highestTxt = document.getElementById("highest")
+const lowestTxt = document.getElementById("lowest")
+
+let array = [];
 let sum = 0;
-let high = 0;
-let low = 0;
+let highest = 0;
+let lowest = 0;
 
-function concatenate() {
-    numTxt.innerHTML = num1Txt.value + " ";
 
+
+function doStuff(){
+    if (!num.value == ""){
+        array.push(parseInt(num.value));
+        num.value = "";
+        sum = 0;
+        for (let i = 0; i < array.length; i++){
+            sum += array[i];
+        }
+        highest = 0;
+        for (let i = 0; i < array.length; i++){
+            if (highest < array[i]){
+                highest = array[i];
+            }
+        }
+        lowest = 99999999;
+        for (let i = 0; i < array.length; i++){
+            if (lowest > array[i]){
+                lowest = array[i];
+            }
+        }
+        arrayList.innerHTML = array.join("<br>");
+        sumTxt.innerHTML = sum;
+        lowestTxt.innerHTML = lowest;
+        highestTxt.innerHTML = highest;
+    }
 }
 
-function concatenate() {
-    numTxt1.innerHTML = num1Txt.value + " ";
-
-}
-
-function clearEntries() {
-    num1Txt.value = "";
-    numTxt.innerHTML = "";
+function deleteAll(){
+    array = [];
+    arrayList.innerHTML = array.join("<br>");
+    sumTxt.innerHTML = "";
+    lowestTxt.innerHTML = "";
+    highestTxt.innerHTML = "";
 }
